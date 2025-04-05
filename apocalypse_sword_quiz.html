@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>What's Your Apocalypse Sword?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1e1e1e;
+            color: #f5f5f5;
+            text-align: center;
+            padding: 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #e63946;
+        }
+        .question {
+            margin: 2rem 0;
+        }
+        button {
+            background-color: #e63946;
+            border: none;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #d62828;
+        }
+        .result {
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            color: #a8dadc;
+        }
+    </style>
+</head>
+<body>
+    <h1>What's Your Apocalypse Sword?</h1>
+    <p>Answer a few spicy questions (that mean nothing)...</p>
+
+    <div class="question">
+        <p><strong>Pick a post-apocalypse snack:</strong></p>
+        <label><input type="radio" name="q1"> Canned peaches</label><br>
+        <label><input type="radio" name="q1"> Gas station wine</label><br>
+        <label><input type="radio" name="q1"> Raw vengeance</label><br>
+        <label><input type="radio" name="q1"> Half-melted chocolate bar</label>
+    </div>
+
+    <div class="question">
+        <p><strong>What's your fight style?</strong></p>
+        <label><input type="radio" name="q2"> Loud and chaotic</label><br>
+        <label><input type="radio" name="q2"> Graceful but deadly</label><br>
+        <label><input type="radio" name="q2"> Pure vibes</label><br>
+        <label><input type="radio" name="q2"> I talk my way out</label>
+    </div>
+
+    <div class="question">
+        <p><strong>Your toxic trait?</strong></p>
+        <label><input type="radio" name="q3"> Flirting during combat</label><br>
+        <label><input type="radio" name="q3"> Overly dramatic exits</label><br>
+        <label><input type="radio" name="q3"> Trusting absolutely no one</label><br>
+        <label><input type="radio" name="q3"> Bringing a sword to brunch</label>
+    </div>
+
+    <button onclick="revealSword()">Reveal My Sword</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        const swords = [
+            { name: "Katana", desc: "You are the Katana: sleek, silent, and way too cool for this apocalypse." },
+            { name: "Claymore", desc: "You are the Claymore: big, dramatic, and capable of leveling buildings and hearts." },
+            { name: "Rapier", desc: "You are the Rapier: precise, stylish, and probably banned from every duel club." },
+            { name: "Machete", desc: "You are the Machete: practical, ruthless, and always ready to survive (or start) chaos." },
+            { name: "Scimitar", desc: "You are the Scimitar: full of flair, always spinning, and maybe a little untrustworthy." },
+            { name: "Sword-Cane", desc: "You are the Sword-Cane: dignified, deadly, and disturbingly charming." },
+            { name: "Dual Daggers", desc: "You are Dual Daggers: fast, feral, and fond of betrayal." },
+            { name: "Broadsword", desc: "You are the Broadsword: strong, reliable, and probably shirtless." }
+        ];
+
+        function revealSword() {
+            const sword = swords[Math.floor(Math.random() * swords.length)];
+            document.getElementById("result").innerHTML = `<strong>${sword.name}</strong><br>${sword.desc}`;
+        }
+    </script>
+</body>
+</html>
